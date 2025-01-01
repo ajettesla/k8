@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  allow.textmode: "true"
+  color.bad: yellow
+  color.good: purple
+  how.nice.to.look: fairlyNice
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-12-19T16:31:31Z"
+  name: uiconfigmap
+  namespace: default
+  resourceVersion: "27070"
+  uid: 83bac4e3-1b97-4d1f-b777-6f48612cb432

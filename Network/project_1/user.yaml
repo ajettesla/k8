@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-1-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: network-1-user-app
+  template:
+    metadata:
+      labels:
+        app: network-1-user-app
+    spec:
+      containers:
+      - name: network-container-user-app
+        image: ajettesla/network_user:1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+spec:
+  selector:
+    app: network-1-user-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+
